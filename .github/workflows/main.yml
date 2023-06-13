@@ -2,6 +2,8 @@ name: main-workflow
 on: 
   push:
     branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
   workflow_dispatch:
 jobs:
   job1:
@@ -13,3 +15,8 @@ jobs:
           hostname
           sleep 5
           touch /tmp/sean-devop_20230613
+      - name: second step
+        run: echo "hello from second condition based step"
+        if: github.event_name == 'push'
+      - name: third step
+        run: echo "hello from 3rd step"
