@@ -4,7 +4,7 @@ on:
     branches: [ "main" ]
 jobs:
   job1:
-    runs-on: ubuntu-latest
+    runs-on: my-server
     steps:
       - name: run a single command on ubuntu machine
         run: echo running second workflow on main branch
