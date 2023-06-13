@@ -1,0 +1,10 @@
+name: release-workflow
+on: 
+  push:
+    branches: [ "release" ]
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: run a single command on ubuntu machine
+        run: echo running on release branch
