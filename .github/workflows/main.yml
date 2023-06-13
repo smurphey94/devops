@@ -5,7 +5,11 @@ on:
   workflow_dispatch:
 jobs:
   job1:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: run a single command on ubuntu machine
-        run: echo running workflow in main branch
+        run: |
+          echo running workflow in main branch
+          echo hostname
+          sleep 5
+          touch /tmp/sean-devop_20230613
