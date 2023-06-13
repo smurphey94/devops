@@ -1,0 +1,10 @@
+name: dev-workflow
+on: 
+  push:
+    branches: [ "dev" ]
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: run a single command on ubuntu machine
+        run: echo running on dev branch
