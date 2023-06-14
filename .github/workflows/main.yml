@@ -1,22 +1,19 @@
 name: main-workflow
-on: 
+on:
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
   workflow_dispatch:
 jobs:
-  job1:
-    runs-on: self-hosted
+  build:
+    runs-on: ubuntu-latest
     steps:
-      - name: run a single command on ubuntu machine
-        run: |
-          echo running workflow in main branch
-          hostname
-          sleep 5
-          touch /tmp/sean-devop_20230613
-      - name: second step
+      - name: first step
+        run: echo running workflow in main branch
+      - name: second step 
         run: echo "hello from second condition based step"
-        if: github.event_name == 'push'
+        if: runner.os == 'Linux'        
       - name: third step
         run: echo "hello from 3rd step"
+        if: runner.os != 'Linux'
