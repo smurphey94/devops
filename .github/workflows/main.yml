@@ -12,8 +12,8 @@ jobs:
       - name: first step
         run: echo running workflow in main branch
       - name: second step 
-        run: echo "hello from second condition based step. OS is $RUNNER.OS"
+        run: echo "hello from second condition based step. OS is $RUNNER_OS"
         if: runner.os == 'Linux'        
       - name: third step
-        run: echo "hello from 3rd step. OS is $RUNNER.OS"
+        run: echo "hello from 3rd step. OS is $RUNNER_OS"
         if: runner.os != 'Linux'
