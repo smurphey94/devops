@@ -9,10 +9,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "build started"
+      - run: eho "build started"
       - run: echo "build completed"
   test:
     runs-on: ubuntu-latest
+    needs: build
+    if: ${{ always() }}
     steps:
       - run: echo "test started"
       - run: echo "test completed"
@@ -21,3 +23,4 @@ jobs:
     steps:
       - run: echo "deploy started"
       - run: echo "deploy completed"
+    needs: test
