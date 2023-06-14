@@ -18,4 +18,4 @@ jobs:
           First_Name: John
           Greeting: Salutations,
       - name: repo variables
-        run: echo "Hi, value of car is ${{vars.var1}} and today is ${{vars.day}}"
+        run: echo "Hi, value of var is ${{vars.var1}} and today is ${{vars.day}}"
