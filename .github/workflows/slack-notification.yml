@@ -1,0 +1,13 @@
+name: Slack-Integration
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: rtCamp/action-slack-notify@v2
+        env:
+           SLACK_WEBHOOK: ${{ secrets.slack_secret }}
+# Generate Slack Secret from https://techlanders-workspace.slack.com/apps/A0F7XDUAZ-incoming-webhooks
